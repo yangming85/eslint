@@ -695,9 +695,6 @@ ruleTester.run("array-bracket-spacing", rule, {
             code: "([ a, b ]: Array<any>) => {}",
             output: "([a, b]: Array<any>) => {}",
             options: ["never"],
-            ecmaFeatures: {
-                ecmaVersion: 6
-            },
             errors: [
                 {
                     message: "There should be no space after '['.",
@@ -718,9 +715,6 @@ ruleTester.run("array-bracket-spacing", rule, {
             code: "([a, b]: Array< any >) => {}",
             output: "([ a, b ]: Array< any >) => {}",
             options: ["always"],
-            ecmaFeatures: {
-                ecmaVersion: 6
-            },
             errors: [
                 {
                     message: "A space is required after '['.",
