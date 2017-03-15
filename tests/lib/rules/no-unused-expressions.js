@@ -63,12 +63,12 @@ ruleTester.run("no-unused-expressions", rule, {
         },
         {
             code: "tag`tagged template literal`",
-            options: [{ allowTemplateTags: true }],
+            options: [{ allowTaggedTemplates: true }],
             parserOptions: { ecmaVersion: 6 }
         },
         {
             code: "shouldNotBeAffectedByAllowTemplateTagsOption()",
-            options: [{ allowTemplateTags: true }],
+            options: [{ allowTaggedTemplates: true }],
             parserOptions: { ecmaVersion: 6 }
         }
     ],
@@ -109,19 +109,19 @@ ruleTester.run("no-unused-expressions", rule, {
         {
             code: "`untagged template literal`",
             errors: ["Expected an assignment or function call and instead saw an expression."],
-            options: [{ allowTemplateTags: true }],
+            options: [{ allowTaggedTemplates: true }],
             parserOptions: { ecmaVersion: 6 }
         },
         {
             code: "`untagged template literal`",
             errors: ["Expected an assignment or function call and instead saw an expression."],
-            options: [{ allowTemplateTags: false }],
+            options: [{ allowTaggedTemplates: false }],
             parserOptions: { ecmaVersion: 6 }
         },
         {
             code: "tag`tagged template literal`",
             errors: ["Expected an assignment or function call and instead saw an expression."],
-            options: [{ allowTemplateTags: false }],
+            options: [{ allowTaggedTemplates: false }],
             parserOptions: { ecmaVersion: 6 }
         }
     ]

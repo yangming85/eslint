@@ -30,7 +30,7 @@ This rule, in its default state, does not require any arguments. If you would li
 
 * `allowShortCircuit` set to `true` will allow you to use short circuit evaluations in your expressions (Default: `false`).
 * `allowTernary` set to `true` will enable you to use ternary operators in your expressions similarly to short circuit evaluations (Default: `false`).
-* `allowTemplateTags` set to `true` will enable you to use tagged template literals in your expressions (Default: `false`).
+* `allowTaggedTemplates` set to `true` will enable you to use tagged template literals in your expressions (Default: `false`).
 
 These options allow unused expressions *only if all* of the code paths either directly change the state (for example, assignment statement) or could have *side effects* (for example, function call).
 
@@ -144,20 +144,20 @@ Examples of **correct** code for the `{ "allowShortCircuit": true, "allowTernary
 a ? b() || (c = d) : e()
 ```
 
-### allowTemplateTags
+### allowTaggedTemplates
 
-Examples of **incorrect** code for the `{ "allowTemplateTags": true }` option:
+Examples of **incorrect** code for the `{ "allowTaggedTemplates": true }` option:
 
 ```js
-/*eslint no-unused-expressions: ["error", { "allowTemplateTags": true }]*/
+/*eslint no-unused-expressions: ["error", { "allowTaggedTemplates": true }]*/
 
 `some untagged template string`;
 ```
 
-Examples of **correct** code for the `{ "allowTemplateTags": true }` option:
+Examples of **correct** code for the `{ "allowTaggedTemplates": true }` option:
 
 ```js
-/*eslint no-unused-expressions: ["error", { "allowTemplateTags": true }]*/
+/*eslint no-unused-expressions: ["error", { "allowTaggedTemplates": true }]*/
 
 tag`some tagged template string`;
 ```
