@@ -65,6 +65,11 @@ ruleTester.run("no-unused-expressions", rule, {
             code: "tag`tagged template literal`",
             options: [{ allowTemplateTags: true }],
             parserOptions: { ecmaVersion: 6 }
+        },
+        {
+            code: "shouldNotBeAffectedByAllowTemplateTagsOption()",
+            options: [{ allowTemplateTags: true }],
+            parserOptions: { ecmaVersion: 6 }
         }
     ],
     invalid: [
